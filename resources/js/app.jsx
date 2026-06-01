@@ -15,9 +15,9 @@ import Layout from "./Layouts/Layout.jsx";
 // })
 
 createInertiaApp({
-    resolve: (name) => {
+    resolve: async (name) => {
         const pages = import.meta.glob('./Pages/**/*.jsx', {eager: true})
-        const page = pages[`./Pages/${name}.jsx`]
+        const page = await pages[`./Pages/${name}.jsx`]
         page.default.layout = page.default.layout || ((page) => <Layout children={page}/>);
         return page;
     },
