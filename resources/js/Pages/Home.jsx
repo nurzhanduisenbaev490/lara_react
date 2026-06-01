@@ -6,7 +6,7 @@ export default function Home({name}) {
         <h1 className={"shadow-2xs"}>Home {name}</h1>
         <Link
             href={"/"}
-            className={"block title mt-[1000px]"}
+            className={"block title mt-[1000px] text-center text-5xl font-semibold tracking-tight sm:text-7xl"}
             preserveScroll
         >
             {new Date().toLocaleTimeString()}
