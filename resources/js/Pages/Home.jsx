@@ -1,3 +1,5 @@
 export default function Home() {
-    return <div>Home</div>
+    return <>
+        <h1 className={"shadow-2xs"}>Home</h1>
+    </>
 }
