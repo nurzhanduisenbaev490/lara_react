@@ -2,7 +2,7 @@ import Layout from "../Layouts/Layout.jsx";
 import {Link} from "@inertiajs/react";
 
 export default function Home({name, posts}) {
-    console.log(posts);
+    // console.log(posts);
     return <>
         <h1 className={"shadow-2xs text-center text-5xl font-semibold tracking-tight sm:text-7xl p-5"}>Home {name}</h1>
 
