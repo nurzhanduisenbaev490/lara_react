@@ -71,8 +71,11 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $id = $post->id;
         //dd($post);
         $post->delete();
-        return redirect('/');
+        return redirect('/')->with([
+            'message' => $id.' post was deleted!!!'
+        ]);
     }
 }

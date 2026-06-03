@@ -1,13 +1,15 @@
 import Layout from "../Layouts/Layout.jsx";
-import {Link} from "@inertiajs/react";
+import {Link, usePage} from "@inertiajs/react";
 import {useRoute} from "../../../vendor/tightenco/ziggy";
 
 export default function Home({name, posts}) {
     const route = useRoute();
+    const {flash} = usePage().props;
+    console.log(usePage());
     // console.log(posts);
     return <>
         <h1 className={"shadow-2xs text-center text-5xl font-semibold tracking-tight sm:text-7xl p-5"}>Home {name}</h1>
-
+        {flash.message && <div>{flash.message}</div>}
         <div>
             {posts.data.map(post => (
                 <div key={post.id} className={"p-4 border"}>
