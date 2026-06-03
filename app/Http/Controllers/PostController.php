@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use function Termwind\render;
 
 class PostController extends Controller
 {
@@ -70,6 +71,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        //dd($post);
+        $post->delete();
+        return redirect('/');
     }
 }
