@@ -9,6 +9,7 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.jsx')
     @inertiaHead
+    @routes
 </head>
 <body>
 @inertia

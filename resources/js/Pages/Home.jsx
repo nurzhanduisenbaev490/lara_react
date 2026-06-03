@@ -1,7 +1,9 @@
 import Layout from "../Layouts/Layout.jsx";
 import {Link} from "@inertiajs/react";
+import {useRoute} from "../../../vendor/tightenco/ziggy";
 
 export default function Home({name, posts}) {
+    const route = useRoute();
     // console.log(posts);
     return <>
         <h1 className={"shadow-2xs text-center text-5xl font-semibold tracking-tight sm:text-7xl p-5"}>Home {name}</h1>
@@ -14,6 +16,8 @@ export default function Home({name, posts}) {
                         <span>{new Date(post.created_at).toLocaleTimeString()}</span>
                     </div>
                     <p className={"font-medium"}>{post.body}</p>
+                    {/*<Link href={`/posts/${post.id}`} className={"text-blue-700"}>Read more...</Link>*/}
+                    <Link href={route('posts.show', post)} className={"text-blue-700"}>Read more...</Link>
                 </div>
             ))}
         </div>
